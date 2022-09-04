@@ -18,7 +18,7 @@ const Home = () => {
                 let productData = res.data;
                 console.log(productData);
 
-                const latestTen = productData.slice(-3);
+                const latestTen = productData.slice(-10);
 
                 let homeProd = latestTen.map((item) =>
                 <div className='just-in-item' key={item._id}>
@@ -57,9 +57,8 @@ const Home = () => {
                 <div className='learn-more'>
                     <p className='about-heading'>SIDEWALK</p>
                     <div className='about-con'>
-                        <p className='about'>Here at SIDEWALK we specialize in producing unique decks.
-                            Our decks are ultra rare and designed by our amazing artists.
-                            Depending on the deck that you buy, your deck will be one of a few in existance or a one of a kind.</p>
+                        <p className='about'>Here at SIDEWALK we specialize in getting the latest and greatest decks delivered
+                        to you with the click of a button.</p>
                     </div>
                     <div className='learn-more-btn'>
                         <p className='learn-more-text'>LEARN MORE</p>
@@ -72,11 +71,8 @@ const Home = () => {
 
             <div className='home-about-con'>
                 <h2 className='about-heading-main'>ABOUT SIDEWALK</h2>
-                <p className='about-main'>Lorem ipsum dolor sit amet. Ex officia blanditiis
-                    aut fugiat aspernatur ea autem sint aut quam culpa aut minus doloribus ea nesciunt similique qui
-                    eius rerum. Id praesentium earum ex assumenda sequi id molestias sunt sed sint dolor. Qui animi
-                    inventore ut dolor porro ut quam ducimus et corrupti architecto non beatae dignissimos et tempora
-                    nihil vel error tenetur. Qui repellendus possimus ut molestias ratione aut eius enim.</p>
+                <p className='about-main'>Here at Sidewalk we have a wide range of decks. If theres something you're thinking about 
+                we probably have it. Our range is made up of all types and brands of deck. Your dream deck is just a click away</p>
                 <div className='extra'></div>
             </div>
 
@@ -101,8 +97,8 @@ const Home = () => {
                 <div className='brandOne'></div>
                 <div className='brandTwo'></div>
                 <div className='brandThree'></div>
-                <div className='brandFour'></div>
-                <div className='brandFive'></div>
+                {/* <div className='brandFour'></div>
+                <div className='brandFive'></div> */}
             </div>
 
             <footer></footer>

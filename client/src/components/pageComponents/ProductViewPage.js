@@ -30,7 +30,10 @@ const ProductViewPage = (props) => {
           productName: data.productName,
           productPrice: data.price,
           productDesc: data.desc,
-          productStock: data.inStock
+          mini: data.mini,
+          mid: data.mid,
+          full: data.full
+          
         })
       })
   }, []);
@@ -49,6 +52,15 @@ const ProductViewPage = (props) => {
 
             <div className='view-product-info-con'>
               <h2 className='view-all-products-heading'>{productData.productName}</h2>
+
+              <h3 className='qty-heading-heading-mini'>Mini</h3>
+              <p className='mini-pv'>{productData.mini}</p>
+              <div className='divider-one'></div>
+              <h3 className='qty-heading-heading-mid'>Mid</h3>
+              <p className='mid-pv'>{productData.mid}</p>
+              <div className='divider-two'></div>
+              <h3 className='qty-heading-heading-full'>Full</h3>
+              <p className='full-pv'>{productData.full}</p>
               <p className='view-rarity'>{productData.productStock}</p>
               <p className='view-price'>R{productData.productPrice}</p>
               <div className='view-add-cart-btn'>

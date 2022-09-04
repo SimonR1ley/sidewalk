@@ -7,6 +7,7 @@ const addBoard = mongoose.Schema({
     mini: { type: Number, required: true },
     mid: { type: Number, required: true },
     full: { type: Number, required: true },
+    // image: { type: String, required: true },
 
 });
 

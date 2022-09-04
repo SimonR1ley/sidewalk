@@ -826,12 +826,12 @@ video {
   background-repeat: no-repeat;
   float: left;
   margin-right: 10%;
-  margin-left: 5%;
-  position: absolute;
+  margin-left: 25%;
+  /* position: absolute; */
   /* top: 50%;
   left: 10%;
   transform: translate(-10%, -50%); */
-  transition: 0.2s ease-in-out;
+  /* transition: 0.2s ease-in-out; */
 }
 
 .brandOne:hover {
@@ -2150,13 +2150,27 @@ footer {
 }
 
 .order-name {
-  width: 18%;
+  width: 15%;
   height: 100%;
-  background-color: #6EDD86;
-  padding-top: 1.5%;
+  /* background-color: #6EDD86; */
+  padding-top: 2%;
   /* padding-left: 3%; */
-  margin-right: 3%;
-  margin-left: 10%;
+  margin-right: 5%;
+  /* margin-left: 10%; */
+  float: left;
+  text-align: left;
+  font-size: 14pt;
+  color: white;
+}
+
+.order-username {
+  width: 15%;
+  height: 100%;
+  /* background-color: #6EDD86; */
+  padding-top: 2%;
+  /* padding-left: 3%; */
+  /* margin-right: 3%; */
+  margin-left: 4%;
   float: left;
   text-align: left;
   font-size: 14pt;
@@ -2166,7 +2180,7 @@ footer {
 .order-qty {
   float: left;
   height: 100%;
-  padding-top: 1.5%;
+  padding-top: 2%;
   width: 10%;
   margin-right: 5%;
   color: white;
@@ -2177,7 +2191,7 @@ footer {
   width: 10%;
   height: 100%;
   /* background-color: #6EDD86; */
-  padding-top: 1.5%;
+  padding-top: 2%;
   margin-left: 3%;
   float: left;
   text-align: center;
@@ -2204,6 +2218,7 @@ footer {
   padding-top: 0.5%;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
 }
 
 .username-order {
@@ -2231,4 +2246,109 @@ footer {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+
+
+.qty-heading-heading-mini{
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  transform: translateX(-40%);
+}
+
+.mini-pv{
+  color: black;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: translateX(-40%);
+}
+
+.divider-one{
+  width: 3px;
+  height: 17px;
+  background-color: #161616;
+  position: absolute;
+  top: 30.5%;
+  left: 45.5%;
+  transform: translateX(-50%);
+  border: none;
+}
+
+.qty-heading-heading-mid{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mid-pv{
+  color: black;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.divider-two{
+  width: 3px;
+  height: 17px;
+  background-color: #161616;
+  position: absolute;
+  top: 30.5%;
+  left: 54.5%;
+  transform: translateX(-50%);
+  border: none;
+}
+
+.qty-heading-heading-full{
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  transform: translateX(-60%);
+}
+
+.full-pv{
+  color: black;
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  transform: translateX(-60%);
+}
+
+.imgPrev{
+  width: 20%;
+  height: 240px;
+  /* right: 24px; */
+  border-radius: 5px;
+  overflow: hidden;
+  /* top: 10px; */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6EDD86;
+}
+
+.imgPrev img{
+  width: 100%;
+}
+
+.prodImage{
+  width: 200px;
+  height: 200px;
+}
+
+.upload-btn{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+.img-name{
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translateX(-50%);
 }

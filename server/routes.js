@@ -1,15 +1,32 @@
 const express = require('express');
 const router = express();
 const addBoardModel = require('./models/addBoard.js');
-
 const addUserModel = require('./models/addUsers.js');
-
 const addCartModel = require('./models/cart.js');
-
 const orderModel = require('./models/orders.js');
+const multer = require('multer');
+const path = require('path');
+
+
+// const productImageStore = multer.diskStorage({
+//     destination:(req, file, callBack) => {
+//         callBack(null, './productImages');
+//     },
+//     filename: (req, file, callBack) => {
+//         console.log(file)
+//         callBack(null, Date.now() + path.extname(file.originalname))
+//     } 
+// })
+
+// const  uploadProductImage = multer({storage: productImageStore});
 
 // Passing the data to the user 
-router.post('/api/addBoard', (req, res) => {
+router.post('/api/addBoard',(req, res) => {
+
+    // let data = JSON.parse(req.body.information);
+
+    // console.log(req.file.filename);
+
     const newBoard = new addBoardModel({
         productName: req.body.productName,
         desc: req.body.desc,
@@ -17,6 +34,7 @@ router.post('/api/addBoard', (req, res) => {
         mini: req.body.mini,
         mid: req.body.mid,
         full: req.body.full,
+        // image: req.file.filename
     });
 
     // newBoard.save() displays the information

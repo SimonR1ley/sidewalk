@@ -23,6 +23,10 @@ const Checkout = () => {
         navigate('/products');
     }
 
+    const toPayment = () => {
+        navigate('/orders');
+    }
+
     useEffect(() => {
         Axios.get('http://localhost:5000/api/allCartProducts')
             .then(res => {
@@ -126,7 +130,7 @@ const Checkout = () => {
                 </div>
 
                 <h2 className='continue-btn' onClick={toProductPage}>Continue Shopping</h2>
-                <h2 className='payment-btn'>Proceed To Payment</h2>
+                <h2 className='payment-btn' onClick={toPayment}>Proceed To Payment</h2>
 
             </div>
 
