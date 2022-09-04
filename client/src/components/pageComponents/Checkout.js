@@ -13,6 +13,8 @@ const Checkout = () => {
 
     const [subtotal, setSubtotal] = useState();
 
+    const username = sessionStorage.getItem('activeUser');
+
     const [total, setTotal] = useState();
 
     let sum = 0;
@@ -27,10 +29,11 @@ const Checkout = () => {
                 let productData = res.data;
                 // console.log(productData);
 
-                let allProducts = productData.map((item) => <CheckoutItem
+                let allProducts = productData.filter(user => user.username === username).map((item) => <CheckoutItem
                     key={item._id}
                     productId={item._id}
                     name={item.productName}
+                    username={item.username}
                     price={item.price}
                     desc={item.desc}
                     mini={item.mini}
@@ -38,8 +41,17 @@ const Checkout = () => {
                     full={item.full}
                     render={setUpdateProducts} />);
 
-                    productData.forEach(item => 
-                        sum += item.price);
+                // productData.forEach(item =>
+                //     sum += item.price);
+
+                productData.forEach((val) => {
+
+                    if (val.username === username) {
+                        sum += val.price;
+                    }
+                });
+
+
 
                 // for (let i; i < productData.length; i++) {
                 //     sum += productData.price
@@ -47,8 +59,8 @@ const Checkout = () => {
                 setSubtotal(sum);
                 setCheckoutItem(allProducts)
                 setUpdateProducts(false);
-                    // console.log(sum);
-                
+                // console.log(sum);
+
             });
     }, [updateProducts]);
 
@@ -65,7 +77,7 @@ const Checkout = () => {
     const pickupDelivery = () => {
         setTotal(subtotal + 0);
     }
-    
+
 
 
     return (

@@ -14,6 +14,9 @@ const Login = () => {
     password: ''
   });
 
+
+  // let userData = {};
+
   const userNameVal = (e) => {
     const value = e.target.value
     setInputs({ ...inputs, username: value });
@@ -35,18 +38,22 @@ const Login = () => {
     Axios.get('http://localhost:5000/api/allUsers')
       .then(function (res) {
         let userData = res.data;
-        console.log(userData[0]._id);
 
-        if(userData[0].username == inputs.username && userData[0].password == inputs.password){
-          sessionStorage.setItem('activeUser', inputs.username);
-          console.log("YES")
-          navigate('/checkout');
-        }
+        userData.forEach((val) => {
+
+          if (val.username == inputs.username && val.password == inputs.password) {
+            sessionStorage.setItem('activeUser', inputs.username);
+            console.log("YES");
+            navigate('/checkout');
+          }
+          else {
+            console.log('Get Fucked');
+          }
+
+        });
       });
 
   }
-
-
 
 
 

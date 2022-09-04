@@ -8,6 +8,8 @@ const Orders = () => {
     const [checkoutItems, setCheckoutItem] = useState();
     const [updateProducts, setUpdateProducts] = useState(false);
 
+    // const username = sessionStorage.getItem('activeUser');
+
 
     useEffect(() => {
         Axios.get('http://localhost:5000/api/allCartProducts')
@@ -17,6 +19,7 @@ const Orders = () => {
 
                 let allProducts = productData.map((item) => 
                 <div className='order'>
+                    <h2 className='order-username'>{item.username}</h2>
                     <h2 className='order-name'>{item.productName}</h2>
                     <h2 className='order-qty'>Mini: {item.mini}</h2>
                     <h2 className='order-qty'>Mid: {item.mid}</h2>
@@ -42,7 +45,7 @@ const Orders = () => {
 
                 <div className='orders-display'>
 
-                    <h2 className='username-order'>USERNAME</h2>
+                    <h2 className='username-order'></h2>
 
                     {checkoutItems}
 

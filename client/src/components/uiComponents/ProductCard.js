@@ -15,8 +15,9 @@ const ProductCard = (props) => {
     sessionStorage.setItem('productId', props.productId);
   }
 
-
+  let username = sessionStorage.getItem('activeUser');
   
+  console.log(username);
 
   const addCartItem = () => {
 
@@ -24,6 +25,7 @@ const ProductCard = (props) => {
     let payload = {
       // "productId": props.productId,
       "productName": props.name,
+      "username": username,
       "desc": props.desc,
       "price": props.price,
       "mini": props.mini,

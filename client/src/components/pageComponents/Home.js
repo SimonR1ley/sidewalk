@@ -80,6 +80,9 @@ const Home = () => {
                 <div className='extra'></div>
             </div>
 
+            <p className='board-sizing-heading'>BOARD SIZING</p>
+            <div className='board-sizing-con'></div>
+
             <div className='just-in-con'>
                 <p className='just-in-heading'>JUST IN</p>
                 <div className='left'></div>
@@ -90,6 +93,8 @@ const Home = () => {
                 </div>
                 <div className='right'></div>
             </div>
+
+            
 
             <h2 className='brands-heading'>BRANDS WE WORK WITH</h2>
             <div className='brands-con'>

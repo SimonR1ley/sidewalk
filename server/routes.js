@@ -34,6 +34,7 @@ router.post('/api/addBoard', (req, res) => {
 router.post('/api/addCart', (req, res) => {
     const newCartItem = new addCartModel({
         productName: req.body.productName,
+        username: req.body.username,
         // productId: req.body.productId,
         price: req.body.price,
         desc: req.body.desc,
@@ -110,10 +111,10 @@ router.get('/api/allUsers', async (req, res) => {
     res.json(newuser);
 });
 
-router.get('/api/oneUser/:id', async (req, res) => {
-    const newuser = await addUserModel.findById(req.params.id);
-    res.json(newuser);
-});
+// router.get('/api/oneUser/:username', async (req, res) => {
+//     const newuser = await addUserModel.find(req.params.username);
+//     res.json(newuser);
+// });
 
 
 router.post('/api/addUser', (req, res) => {

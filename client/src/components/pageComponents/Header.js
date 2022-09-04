@@ -11,12 +11,30 @@ const Header = () => {
     const [cartItems, setCartItems] = useState();
     const [renderItems, setRenderItems] = useState("false");
 
+    const [logout, setLogout] = useState('nav-heading Six');
+
+    const username = sessionStorage.getItem('activeUser');
+
     let admin ='noDisplay';
 
-    const Admin = "Admin"
+    let orders ='noDisplay';
 
-    if(sessionStorage.getItem('activeUser') != Admin){
-        admin = 'noDisplay';
+    let Logout = 'nav-heading Six'
+
+    if(sessionStorage.getItem('activeUser') == 'Admin'){
+        admin = 'nav-heading Four';
+    }
+
+
+    if(sessionStorage.getItem('activeUser') == 'Admin'){
+        orders = 'nav-heading Five';
+    }
+
+
+    if(sessionStorage.getItem('activeUser')){
+        Logout = 'nav-heading Six'
+    }else{
+        Logout = 'noDisplay';
     }
 
 
@@ -38,7 +56,19 @@ const Header = () => {
     let navigate = useNavigate();
 
     const toCheckout = () => { 
-        navigate('/login');
+
+        if(sessionStorage.getItem('activeUser')){
+            navigate('/checkout');
+        }else{
+            navigate('/login');
+        }
+      }
+
+
+      const LogoutBtn = () => { 
+
+        sessionStorage.clear();
+
       }
 
 
@@ -49,11 +79,12 @@ const Header = () => {
                 let productData = res.data;
                 // console.log(productData);
 
-                let allProducts = productData.map((item) =>
+                
+
+                let allProducts = productData.filter(user => user.username === username).map((item) => 
                     <div className='cart-item'>
                         <h3 className='cart-item-name'>{item.productName}</h3>
                         <h3 className='cart-item-price'>R{item.price}</h3>
-                        {/* <h3 className='cart-remove'>Remove</h3> */}
                     </div>
                 );
 
@@ -76,9 +107,9 @@ const Header = () => {
                     <Link to='/'><p className='nav-heading One'>HOME</p></Link>
                     <p className='nav-heading Two'>ABOUT</p>
                     <Link to='/products'><p className='nav-heading Three'>PRODUCTS</p></Link>
-                    <Link to='/addproduct'><p className='nav-heading Four'>ADMIN</p></Link>
-                    <Link to='/login'><p className={admin}>LOGIN</p></Link>
-                    <Link to='/orders'><p className='nav-heading Five'>ORDERS</p></Link>
+                    <Link to='/addproduct'><p className={admin}>ADMIN</p></Link>
+                    <Link to='/orders'><p className={orders}>ORDERS</p></Link>
+                    <p className={Logout} onClick={LogoutBtn}>LOGOUT</p>
                     <div className='cart' onClick={Cart}></div>
                 </div>
             </div>

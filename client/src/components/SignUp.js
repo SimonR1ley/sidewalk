@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+
+  let navigate = useNavigate();
 
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -32,6 +35,14 @@ const SignUp = () => {
     }
 
     Axios.post('http://localhost:5000/api/addUser', payload);
+
+    if(username == '' && password == ''){
+      navigate('./signup');
+    }else{
+      navigate('./login');
+    }
+
+   
 
   }
 

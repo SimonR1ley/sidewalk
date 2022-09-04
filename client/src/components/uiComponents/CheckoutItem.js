@@ -3,8 +3,8 @@ import Axios from 'axios';
 
 const CheckoutItem = (props) => {
 
+    console.log(props.username);
     const deleteItem = () => {
-        // console.log(id);
 
         if (window.confirm("Are you sure you want to delete: " + props.name) === true) {
             Axios.delete('http://localhost:5000/api/deleteCartItem/' + props.productId)
