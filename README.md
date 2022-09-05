@@ -14,7 +14,7 @@
 <h3 align="center">Sidewalk</h3>
 
   <p align="center">
-    A eccomerce website built with React JS, Node Js and Mongo DB.<br>
+    An eccomerce website built with React JS, Node Js and Mongo DB.<br>
 
    <br />
    <br />
@@ -61,34 +61,45 @@
 
 ### Project Description
 
-Movie Trivia! Movie Trivia is a simple trivia application. It consists of three categories, Disney Movies, Guess the Hero, Horror Movies. This is a trivia app with a twist, questions are asked through emojis.
+Sidewalk! Sidewalk is an eccomerce website specializing in skateboard decks. 
 
 ### Built With
 [<img src="https://4.bp.blogspot.com/-cE71mKJc94w/VrT2tLTxXTI/AAAAAAAACjU/KdygZ1AN0Nc/s1600/image04.png" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://developer.android.com/studio?gclid=CjwKCAjwuYWSBhByEiwAKd_n_q4WXi5vcCji08peoWOEsv-KHFT7QWNZNmozB_CIiiSNl_HOUL-1JBoCGx8QAvD_BwE&gclsrc=aw.ds)
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/512px-Kotlin_Icon.svg.png?20171012085709" width="4%" height="4%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://kotlinlang.org/)
 
 
+<!-- GETTING STARTED -->
+<!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
 ## Getting Started
 
-These instructions will help you get a copy of the project up and running on your machine.
+The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-For development, the latest version of Android Studio is required. The latest version can be downloaded from [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwuYWSBhByEiwAKd_n_q4WXi5vcCji08peoWOEsv-KHFT7QWNZNmozB_CIiiSNl_HOUL-1JBoCGx8QAvD_BwE&gclsrc=aw.ds)
+Ensure that you have the latest version of [NPM](https://www.npmjs.com/) installed on your machine. The [GitHub Desktop](https://desktop.github.com/) program will also be required.
+
+### How to install
 
 ### Installation
+Here are a couple of ways to clone this repo:
 
-1. Clone the repo
-```
-git clone https://github.com/SimonR1ley/MovieTrivia.git
-```
-2. Open the project
+1. GitHub Desktop </br>
+Enter `https://github.com/SimonR1ley/sidewalk.git` into the URL field and press the `Clone` button.
 
-Use `File` : `Open` in Android Studio.
+2. Clone Repository </br>
+Run the following in the command-line to clone the project:
+   ```sh
+   git clone https://github.com/SimonR1ley/sidewalk.git
+   ```
+    Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
 
-<!-- FEATURES AND FUNCTIONALITY-->
-<!-- You can add the links to all of your imagery at the bottom of the file as references -->
-
+3. Install Dependencies </br>
+Run the following in the command-line to install all the required dependencies:
+   ```
+   npm install axios
+   <!-- npm install react-calendar -->
+   npm install react-router-dom
+   ```
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
@@ -241,7 +252,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 - [Figma](https://www.figma.com/)
 <!-- - [Zlatko Plamenov Mockups](https://www.freepik.com/author/zlatko-plamenov) -->
 
-<!-- [image1]: Images/aboutproject.jpg -->
+[image1]: Images/mockup1.png
 <!-- [image2]: Images/entername.jpg -->
 <!-- [image3]: Images/choosecategory.jpg -->
 <!-- [image4]: Images/answerquiz.jpg -->
@@ -250,7 +261,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- [image7]: Images/wireframes.png -->
 <!-- [image8]: Images/moodboard.png -->
 <!-- [image9]: Images/userflow.png -->
-[image10]: Images/mockup1.jpg
-[image11]: Images/mockup2.jpg
-[image12]: Images/mockup3.jpg
-[image13]: Images/mockup4.jpg
+[image10]: Images/mockup1.png
+[image11]: Images/mockup2.png
+[image12]: Images/mockup3.png
+[image13]: Images/mockup4.png
