@@ -104,28 +104,20 @@ Run the following in the command-line to install all the required dependencies:
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 
-### Entering your username
+### Home Page Figma Design
 
 ![image2][image2]
-Enter your name to start with the quiz. This name can be changed if you would want to.
 
-### Choose a category
+### Management Page Figma Design
 
 ![image3][image3]
-Select a category of the esports game that you wanted to get tested in, by tapping on the image tiles below.
 
-### Answer Quiz Questions
+### Checkout Page Figma Design
 
 ![image4][image4]
-Answer the question given to the user on screen by tapping on the red buttons below and your score will be updated depending if you got the quiz question correct
 
-### Display Score
+### Login Page Figma Design
 ![image5][image5]
-After the user has completed the categories' questions, they can view their score for that category and if they have broken or set a high score they will have a more flared up screen indicating so.
-
-### Show & Reset High Score
-![image6][image6]
-The user can view their high score as well as reset it in the settings page
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -133,7 +125,7 @@ The user can view their high score as well as reset it in the settings page
 
 ## Concept Process
 
-I am a very huge fan of dark theme applications and using colors that contrast extremely well, so in conclusion I thought it was a no-brainer to use in black, white and red in conjunction with each other to create the most eye-catching application. By looking at my wireframes you would notice that my answering method differs from the final application outcome. I have come to realise how intricate and dense Kotlin can be so decided to go with a more simpler, yet effective answering method.
+I started with the design in Figma, I found some inspiration images and combined all the ideas I like and formed my design. From there I started thinking about the functionality the website required and changed the designs around them. I then started the development.
 
 ### Wireframes
 
