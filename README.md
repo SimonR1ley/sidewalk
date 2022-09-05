@@ -137,13 +137,11 @@ I am a very huge fan of dark theme applications and using colors that contrast e
 
 ### Wireframes
 
-![image7][image7]
+![image2][image2]
+[image3][image3]
+[image4][image4]
+[image5][image5]
 
-### Moodboard
-![image8][image8]
-
-### User Flow
-![image9][image9]
 
 ## Development Process
 
@@ -151,38 +149,33 @@ The `Development Process` is the technical implementations and functionality don
 
 ### Implementation Process
 
-I used <b>Kotlin 1.7.0</b> for the functionality and <b>XML</b> for the front-end.
+I used <b>React JS</b>, <b>Node JS</b> and <b>Mongo DB</b>.
 
-#### XML
+#### React JS
 
-- I implemented `ScrollView` for my <b>Settings</b> & <b>Category</b> activities
-- `RelativeLayout` was used for my <b>Home</b> activity
-- `ConstraintLayout` was used for my <b>Splash</b> activity
-- `LinearLayout` was used for majority of the project
+- I started creating the designs I made in Figma.
+- I started making all the nessecery components to link the website together.
+- I connected all the components and added the functionality to the website.
 
-#### Kotlin
+#### Node JS
 
-- I created a `Constants.kt` object file which held all my question variables and my `sharedPreferences` data
-- I created a `Questions.kt` class file, where I created the model of my question, meaning what data my question is to consist of like if it has an image, how many answers this question has and I also passed a key/value pair, that will check if my question is correct
-- I created a `UpdateUI()` function that will update the question and its answers on one `Questions.kt` activity file instead of creating a different file for each categories' question.
-- I used `Intent` to send and receive data from each activity
-- I also incorporated `SharedPreferences` to save and send data to each activity, like the users score and username, which will be saved conditionally using an `if()` statement
+- I created my DB schemas.
+- I connected them to my Routes using express and mongoose with the middleware.
+- I went back to my components and called my data from the DB as well and linked the components used for pushing the data to the DB
 
 #### Highlights
 
 <!-- stipulated the highlight you experienced with the project -->
 
-- A highlight of this project was definitely learning a new language (Kotlin) and working and developing for mobile.
-- It was also a high point for me to load my app onto my mobile device and interacting with it
-- Fixing all of the bugs I struggled with was also a big plus for me
+- A highlight of this project was definitely learning noSQL.
+- I really do see the appeal and will be delving deeper into understanding and mastering more.
 
 #### Challenges
 
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
 
-- I encountered a bug that will not pass the score if the last question of the category is correct, essentially giving the user a 4/5 score instead of a 5/5, unfortunately I could not get this fixed, but will be in later stages of development of XP
-- It was very challenging sending and receiving data using `SharedPreferences` but got it figured out in the end
-- I was flabbergasted at how dense Kotlin actually is, so wrapping my head around how the code is written and how data works was a struggle to say the least
+- I encountered quite a bit of challenges:
+- I didn't get to add all the functionality I wanted, time got away from me and most of my time was occupied trying to fix bugs and issues for example, I wanted to loop through the indexes of my data call but my for loop wasn't working the the useEffect by the Axios call. I did some research and ended up using a for each loop which helped solve the issue.
 
 ### Future Implementation
 
@@ -190,11 +183,9 @@ I used <b>Kotlin 1.7.0</b> for the functionality and <b>XML</b> for the front-en
 
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-- I would like to add more questions
-- I want to change the answering method, making it more intricate and fun
-- I want to implement Firebase or Firestore
-- I want to fix my Shared Preferences bug
-- I want to add more games that are part of the esports world
+- I would like to add the images to the website
+- I want to fix the orders page where I can remove and update the stock.
+- I want to fix my product cards and make them look better and more professional
 
 <!-- MOCKUPS -->
 
@@ -209,17 +200,6 @@ I used <b>Kotlin 1.7.0</b> for the functionality and <b>XML</b> for the front-en
 ![image12][image12]
 ![image13][image13]
 <br>
-
-
-<!-- VIDEO DEMONSTRATION -->
-
-### Video Demonstration
-
-<!-- TODO Change this -->
-
-To see a run through of XP, click below:
-
-[View Demonstration](URL)
 
 See the [open issues](https://github.com/SimonR1ley/sidewalk/issues) for a list of proposed features (and known issues).
 
@@ -253,10 +233,10 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- - [Zlatko Plamenov Mockups](https://www.freepik.com/author/zlatko-plamenov) -->
 
 [image1]: Images/mockup1.png
-<!-- [image2]: Images/entername.jpg -->
-<!-- [image3]: Images/choosecategory.jpg -->
-<!-- [image4]: Images/answerquiz.jpg -->
-<!-- [image5]: Images/results.jpg -->
+[image2]: Images/home_page.png
+[image3]: Images/management_page.png
+[image4]: Images/checkout_page.png
+[image5]: Images/login_page.png
 <!-- [image6]: Images/highscore.jpg -->
 <!-- [image7]: Images/wireframes.png -->
 <!-- [image8]: Images/moodboard.png -->
