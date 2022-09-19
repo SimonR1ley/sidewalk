@@ -21,47 +21,51 @@ const AddProduct = () => {
   const [mid, setMid] = useState();
   const [full, setFull] = useState();
 
+  const [imageName, setImageName] = useState("Name of File will appear here");
+  const [productImage, setProductImage] = useState();
+
 
   useEffect(() => {
     Axios.get('http://localhost:5000/api/allProducts')
       .then(res => {
         let productData = res.data;
         console.log(productData);
-        // let renderProducts = productData.map((item) => <ProductCard key={item._id} name={item.name} price={item.price} desc={item.description} stock={item.stock}/>)
-        // setProducts(renderProducts);
         setUpdateProducts(false);
       });
   }, [updateProducts]);
 
 
-  const getName = (e) => {
+
+  let defaultFormVals = ["name", "price", "desc", "mini", "mid", "full"];
+
+  const [formValues, setFormValues] = useState(defaultFormVals);
+
+
+
+  const getValues = (e) =>{
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  }
+
+
+  const getImage = (e) => {
+
+    // This is where Multer comes in
+    let imageFile = e.target.files[0];
+    setProductImage(imageFile);
+
     let value = e.target.value;
-    setProductName(value);
-  }
+    let imgName = value.substring(12);
+    setImageName(imgName);
 
-  const getPrice = (e) => {
-    let value = +e.target.value;
-    setProductPrice(value);
-  }
+    let reader = new FileReader();
+    reader.onload = () => {
+      let output = document.getElementById('imgPrev');
+      output.src = reader.result;
+    };
 
-  const getDesc = (e) => {
-    let value = e.target.value;
-    setDesc(value);
-  }
+    reader.readAsDataURL(e.target.files[0]);
 
-  const getMini = (e) => {
-    let value = +e.target.value;
-    setMini(value)
-  }
-
-  const getMid = (e) => {
-    let value = +e.target.value;
-    setMid(value)
-  }
-
-  const getFull = (e) => {
-    let value = +e.target.value;
-    setFull(value)
   }
 
 
@@ -69,16 +73,24 @@ const AddProduct = () => {
 
   // Add Board to DB through the Payload in the request 
   const addProduct = () => {
+
+    const payloadData = new FormData();
+
     let payload = {
-      "productName": productName,
-      "desc": desc,
-      "price": productPrice,
-      "mini": mini,
-      "mid": mid,
-      "full": full,
+
+      productName: formValues['productName'],
+      desc: formValues['desc'],
+      price: +formValues['price'],
+      mini: +formValues['mini'],
+      mid: +formValues['mid'],
+      full: +formValues['full'],
     }
 
-    Axios.post('http://localhost:5000/api/addBoard', payload);
+
+    payloadData.append("information", JSON.stringify(payload));
+    payloadData.append("image", productImage);
+
+    Axios.post('http://localhost:5000/api/addBoard', payloadData);
 
 
     setUpdateProducts(true);
@@ -127,14 +139,17 @@ const AddProduct = () => {
                 </div> */}
 
         <div className='admin-add-con'>
-          <div className='admin-add-img'></div>
-          <input className='admin-img-select' type='image'></input>
-          <input id='name' className='add-name-input' placeholder='NAME' onBlur={getName}></input>
-          <input id='qtyMini' className='add-quantity-mini' type='number' placeholder='Qty Mini' onBlur={getMini}></input>
-          <input id='qtyMid' className='add-quantity-mid' type='number' placeholder='Qty Mid' onBlur={getMid}></input>
-          <input id='qtyFull' className='add-quantity-full' type='number' placeholder='Qty Full' onBlur={getFull}></input>
-          <input id='price' className='add-price-input' type='number' placeholder='PRICE' onBlur={getPrice}></input>
-          <input id='desc' className='add-desc-input' placeholder='Description' onBlur={getDesc}></input>
+
+          <div className='imgPrev'><img id="imgPrev"></img></div>
+          <p className='img-name' >{imageName}</p>
+          <input type="file" className='file-upload' onChange={getImage} />
+
+          <input name='productName' id='name' className='add-name-input' placeholder='NAME' onChange={getValues}></input>
+          <input name='mini' id='qtyMini' className='add-quantity-mini' type='number' placeholder='Qty Mini' onChange={getValues}></input>
+          <input name='mid' id='qtyMid' className='add-quantity-mid' type='number' placeholder='Qty Mid' onChange={getValues}></input>
+          <input name='full' id='qtyFull' className='add-quantity-full' type='number' placeholder='Qty Full' onChange={getValues}></input>
+          <input name='price' id='price' className='add-price-input' type='number' placeholder='PRICE' onChange={getValues}></input>
+          <input name='desc' id='desc' className='add-desc-input' placeholder='Description' onChange={getValues}></input>
           <div className='add-admin-btn'>
             <h2 className='add-admin-btn-text' onClick={addProduct}>ADD</h2>
           </div>

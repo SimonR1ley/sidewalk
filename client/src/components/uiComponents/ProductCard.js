@@ -6,22 +6,25 @@ import Axios from 'axios';
 const ProductCard = (props) => {
 
   const [productsCart, setProductsCart] = useState([]);
+  
 
   let navigate = useNavigate();
 
 
-  const toProduct = () => { 
+  const toProduct = () => {
     navigate('/productviewpage');
     sessionStorage.setItem('productId', props.productId);
   }
 
   let username = sessionStorage.getItem('activeUser');
-  
-  console.log(username);
+
+  console.log(props.image);
 
   const addCartItem = () => {
 
-    
+
+    if (sessionStorage.getItem('activeUser')) {
+  
     let payload = {
       // "productId": props.productId,
       "productName": props.name,
@@ -32,20 +35,22 @@ const ProductCard = (props) => {
       "mid": props.mid,
       "full": props.full,
     }
-    
     console.log(payload);
-
     console.log(props.desc)
-
     Axios.post('http://localhost:5000/api/addCart', payload);
 
-  
+  } else {
+    navigate('/login');
   }
 
-  
+
+
+  }
+
+
   return (
-         <div className='product-item'>
-      <div className='product-img'></div>
+    <div className='product-item'>
+      <img src={props.image}/>
       <div className='product-info-con'>
         <h2 className='all-products-heading'>{props.name}</h2>
         {/* <div className='discription-con'>

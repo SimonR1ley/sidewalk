@@ -8,33 +8,34 @@ const multer = require('multer');
 const path = require('path');
 
 
-// const productImageStore = multer.diskStorage({
-//     destination:(req, file, callBack) => {
-//         callBack(null, './productImages');
-//     },
-//     filename: (req, file, callBack) => {
-//         console.log(file)
-//         callBack(null, Date.now() + path.extname(file.originalname))
-//     } 
-// })
+const productImageStore = multer.diskStorage({
+    destination: (req, file, callBack) => {
+        callBack(null, './productImages');
+    }, 
 
-// const  uploadProductImage = multer({storage: productImageStore});
+    filename: (req, file, callBack) => {
+        console.log(file);
+        callBack(null, Date.now() + path.extname(file.originalname))
+    }
+});
+
+const uploadProductImage = multer({storage: productImageStore});
 
 // Passing the data to the user 
-router.post('/api/addBoard',(req, res) => {
+router.post('/api/addBoard',uploadProductImage.single('image'),(req, res) => {
 
-    // let data = JSON.parse(req.body.information);
+    let data = JSON.parse(req.body.information);
 
     // console.log(req.file.filename);
 
     const newBoard = new addBoardModel({
-        productName: req.body.productName,
-        desc: req.body.desc,
-        price: req.body.price,
-        mini: req.body.mini,
-        mid: req.body.mid,
-        full: req.body.full,
-        // image: req.file.filename
+        productName: data.productName,
+        desc: data.desc,
+        price: data.price,
+        mini: data.mini,
+        mid: data.mid,
+        full: data.full,
+        image: req.file.filename
     });
 
     // newBoard.save() displays the information

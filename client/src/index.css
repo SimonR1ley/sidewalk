@@ -664,10 +664,10 @@ video {
   height: 98%;
   width: 30%;
   /* background-color: cadetblue; */
-  background-image: url(./components/assets/skate1.png);
+  /* background-image: url(./components/assets/skate1.png);
   background-position: center;
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   float: left;
   margin-left: 5%;
 }
@@ -2334,6 +2334,10 @@ footer {
   width: 100%;
 }
 
+.product-img{
+  width: 30%;
+}
+
 .prodImage{
   width: 200px;
   height: 200px;
@@ -2344,11 +2348,19 @@ footer {
   left: 50%;
   top: 50%;
   transform: translateX(-50%);
+  background-color: black;
 }
 
 .img-name{
   position: absolute;
   left: 50%;
   top: 45%;
+  transform: translateX(-50%);
+}
+
+.file-upload{
+  position: absolute;
+  left: 50%;
+  top: 50%;
   transform: translateX(-50%);
 }

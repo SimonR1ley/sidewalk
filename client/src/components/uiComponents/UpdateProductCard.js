@@ -48,7 +48,7 @@ const UpdateProductCard = (props) => {
                 <input name='mid' id='qty' className='update-quantity-mid' type='number' placeholder={props.mid}  onChange={updateValues}></input>
                 <input name='full' id='qty' className='update-quantity-full' type='number' placeholder={props.full}  onChange={updateValues}></input>
                 <input name='price' id='price' className='update-price-input' type='number' placeholder={"R" + props.price} onChange={updateValues}></input>
-                <input id='desc' className='update-desc-input' placeholder='Description' ></input>
+                <input name='desc' id='desc' className='update-desc-input' placeholder='Description' ></input>
                 <div className='update-admin-btn'>
                     <h2 className='update-admin-btn-text' onClick={updateProd}>UPDATE</h2>
                 </div>
